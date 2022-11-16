@@ -1,4 +1,4 @@
-package Singleton_Patterns;
+package SingletonPatterns;
 class CloningSingleton implements Cloneable {
     private static CloningSingleton instance;
     private String name;

@@ -1,4 +1,4 @@
-package Singleton_Patterns;
+package SingletonPatterns;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -46,13 +46,13 @@ public class Serialization {
         SerializationSinglton instanceTwo = null;
         try {
             // serialize to a file
-            FileOutputStream fos = new FileOutputStream("instance.ser");
+            FileOutputStream fos = new FileOutputStream("./instance.ser");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(instanceOne);
             oos.close();
 
             // de-serialize from file to object
-            FileInputStream fis = new FileInputStream("instance.ser");
+            FileInputStream fis = new FileInputStream("./instance.ser");
             ObjectInputStream ois = new ObjectInputStream(fis);
             instanceTwo = (SerializationSinglton) ois.readObject();
             ois.close();

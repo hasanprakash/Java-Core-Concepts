@@ -1,4 +1,4 @@
-package Singleton_Patterns;
+package SingletonPatterns;
 import java.lang.reflect.Constructor;
 class ReflectionSingleton
 {
@@ -53,3 +53,9 @@ class Reflection {
         System.out.println(instanceTwo.getName()+" and it's hash code is "+instanceTwo.hashCode());
     }    
 }
+
+/**
+ * OUTPUT:
+ * new instance is created with name null and with different hashcode from instanceOne
+ * so, the class is not singleton anymore
+ */

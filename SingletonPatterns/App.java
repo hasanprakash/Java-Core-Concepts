@@ -1,4 +1,4 @@
-package Singleton_Patterns;
+package SingletonPatterns;
 class Singleton {
     // lazy initialization using double-checked locking (thread safe)
     private static Singleton instance = null;

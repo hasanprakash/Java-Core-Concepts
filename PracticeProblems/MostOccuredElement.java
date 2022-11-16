@@ -1,4 +1,4 @@
-package Practice;
+package PracticeProblems;
 
 import java.util.HashMap;
 
