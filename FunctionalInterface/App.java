@@ -17,6 +17,5 @@ public class App {
         // basically we can't create instance to interface
         Operations ops = new Operations();
         ops.callFunction(s); // passing as parameter
-        
     }
 }

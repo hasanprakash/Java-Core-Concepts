@@ -9,6 +9,9 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 class SerializationSinglton implements Serializable {
+    private static final long serialVersionUID = 1L; // value can be anything of long type
+    // used to unlink the serialized object with the class
+    // will be generated automatically by JVM if not declared
     private static SerializationSinglton instance;
     private String name;
     private SerializationSinglton() {
@@ -46,12 +49,14 @@ public class Serialization {
         SerializationSinglton instanceTwo = null;
         try {
             // serialize to a file
+            // generates a serialVersionUID automatically if not specified
             FileOutputStream fos = new FileOutputStream("./instance.ser");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(instanceOne);
             oos.close();
 
             // de-serialize from file to object
+            // generates or takes a serialVersionUID and checks with the serialVersionUID of serialized object
             FileInputStream fis = new FileInputStream("./instance.ser");
             ObjectInputStream ois = new ObjectInputStream(fis);
             instanceTwo = (SerializationSinglton) ois.readObject();
@@ -70,10 +75,10 @@ public class Serialization {
             e.printStackTrace();
         }
 
-        // testing the instance two
+        // testing the instanceTwo
         System.out.println(instanceOne.getName()+" and it's hash code is "+instanceOne.hashCode());
         System.out.println(instanceTwo.getName()+" and it's hash code is "+instanceTwo.hashCode());
-        // same value and different hash code
+        // same value and different hash code (if not managed)
     }
 }
 
